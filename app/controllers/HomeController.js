@@ -4,7 +4,9 @@ angular
 		$scope.title = "Home";
 		$scope.items = ['Item One', 'Item Two', 'Item Three'];
 		$scope.selectedValue = 'Item Two';
-		$scope.friends = FriendsService.get();
+		FriendsService.get().then(function (data) {
+			$scope.friends = data;
+		});
 
 		$scope.save = function () {
 			alert(JSON.stringify(friends));
