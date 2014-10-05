@@ -7,6 +7,6 @@ angular
 		$scope.friends = friends;
 
 		$scope.save = function () {
-			$http.post('api/friends', $scope.friends);
+			alert(JSON.stringify(friends));
 		};
 	}]);
