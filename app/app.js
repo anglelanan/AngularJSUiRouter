@@ -12,10 +12,10 @@ angular
 		.state('home', {
 			url: '/',
 			templateUrl: 'app/views/home.html',
-			controller: function ($scope) {
+			controller: ['$scope', function ($scope) {
 				$scope.title = "Home";
 				$scope.items = ['Item One', 'Item Two', 'Item Three'];
-			}
+			}]
 		})
 		.state('about', {
 			url: '/about',
