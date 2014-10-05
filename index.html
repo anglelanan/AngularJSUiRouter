@@ -4,8 +4,15 @@
 		<title>AngularJS-UiRouter</title>
 	</head>
 	<body>
+		<div ng-app="app">
+			<header ng-include="'app/views/parts/header.html'"></header>
+			<div ui-view></div>
+			<footer ng-include="'app/views/parts/footer.html'"></footer>
+		</div>
 		<script src="lib/AngularJS/angular.js"></script>
 		<script src="lib/AngularJS/angular-route.min.js"></script>
-		<script src="lib/AngularJS/angular-ui-router.js.js"></script>
+		<script src="lib/AngularJS/angular-ui-router.js"></script>
+		<script src="app/app.js"></script>
+		<link rel="stylesheet" href="ass/css/style.css" type="text/css"/>
 	</body>
 </html>
