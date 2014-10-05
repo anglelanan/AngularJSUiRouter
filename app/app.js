@@ -14,11 +14,8 @@ angular
 			templateUrl: 'app/views/home.html',
 			controller: 'HomeController',
 			resolve: {
-				friends: ['$http', function ($http) {
-						return $http.get('api/friends.json')
-						.then(function (response) {
-							return response.data;
-						})
+				friends: ['FriendsService', function (FriendsService) {
+						return FriendsService.get();
 					}]
 			}
 		})
