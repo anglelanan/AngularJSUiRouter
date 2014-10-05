@@ -16,7 +16,8 @@ angular
 		})
 		.state('about', {
 			url: '/about',
-			templateUrl: 'app/views/about.html'
+			templateUrl: 'app/views/about.html',
+			controller: 'AboutController'
 		})
 		.state('contact', {
 			url: '/contact',
