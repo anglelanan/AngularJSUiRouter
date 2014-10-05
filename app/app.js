@@ -12,7 +12,15 @@ angular
 		.state('home', {
 			url: '/',
 			templateUrl: 'app/views/home.html',
-			controller: 'HomeController'
+			controller: 'HomeController',
+			resolve: {
+				friends: ['$http', function ($http) {
+						return $http.get('api/friends.json')
+						.then(function (response) {
+							return response.data;
+						})
+					}]
+			}
 		})
 		.state('about', {
 			url: '/about',
