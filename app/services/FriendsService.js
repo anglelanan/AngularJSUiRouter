@@ -5,12 +5,12 @@ angular
 		get: function () {
 			return [
 				{
-					"name": "Will Two",
+					"name": "Will Three",
 					"age": 30,
 					"isSpecial": false
 				},
 				{
-					"name": "Laura Two",
+					"name": "Laura Three",
 					"age": 26,
 					"isSpecial": true
 				}

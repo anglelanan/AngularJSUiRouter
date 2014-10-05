@@ -1,10 +1,10 @@
 angular
 .module('app')
-.controller('HomeController', ['$scope', '$http', 'friends', function ($scope, $http, friends) {
+.controller('HomeController', ['$scope', 'FriendsService', function ($scope, FriendsService) {
 		$scope.title = "Home";
 		$scope.items = ['Item One', 'Item Two', 'Item Three'];
 		$scope.selectedValue = 'Item Two';
-		$scope.friends = friends;
+		$scope.friends = FriendsService.get();
 
 		$scope.save = function () {
 			alert(JSON.stringify(friends));
