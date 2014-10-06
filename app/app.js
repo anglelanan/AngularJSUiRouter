@@ -1,26 +1,19 @@
 define(['angular'], function (angular) {
 	var app = angular.module('app', [
 		'ngRoute',
-		'ui.router',
-		'oc.lazyLoad'
+		'ui.router'
 	])
 	.config([
 		'$controllerProvider',
 		'$compileProvider',
 		'$filterProvider',
 		'$provide',
-		'$ocLazyLoadProvider',
 		function (
 		$controllerProvider,
 		$compileProvider,
 		$filterProvider,
-		$provide,
-		$ocLazyLoadProvider
+		$provide
 		) {
-
-			$ocLazyLoadProvider.config({
-				asyncLoader: require
-			});
 			app.controller = $controllerProvider.register;
 			app.service = $provide.service;
 			app.factory = $provide.factory;

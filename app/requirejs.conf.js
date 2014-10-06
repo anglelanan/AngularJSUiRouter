@@ -5,7 +5,6 @@ require
 		'angular': '../lib/AngularJS/angular',
 		'angular-route': '../lib/AngularJS/angular-route.min',
 		'angular-ui-route': '../lib/AngularJS/angular-ui-router',
-		'oc-lazy-load': '../lib/ocLazyLoad/ocLazyLoad',
 		'app': 'app',
 	},
 	shim: {
@@ -18,11 +17,8 @@ require
 		'angular-ui-route': {
 			deps: ['angular-route']
 		},
-		'oc-lazy-load': {
-			deps: ['angular-ui-route']
-		},
 		'app': {
-			deps: ['oc-lazy-load']
+			deps: ['angular-ui-route']
 		}
 	}
 }
