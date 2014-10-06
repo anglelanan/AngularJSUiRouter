@@ -9,6 +9,6 @@ angular
 		});
 
 		$scope.save = function () {
-			alert(JSON.stringify(friends));
+			alert(JSON.stringify($scope.friends));
 		};
 	}]);
