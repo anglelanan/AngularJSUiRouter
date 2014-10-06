@@ -1,31 +1,32 @@
-angular
-.module('app', [
-	'ui.router'
-])
-.config([
-	'$urlRouterProvider',
-	'$stateProvider'
-	, function ($urlRouterProvider, $stateProvider) {
-		$urlRouterProvider.otherwise('/');
+define(['angular'], function (angular) {
+	var app = angular.module('app', [
+		'ngRoute',
+		'ui.router',
+		'oc.lazyLoad'
+	])
+	.config([
+		'$controllerProvider',
+		'$compileProvider',
+		'$filterProvider',
+		'$provide',
+		'$ocLazyLoadProvider',
+		function (
+		$controllerProvider,
+		$compileProvider,
+		$filterProvider,
+		$provide,
+		$ocLazyLoadProvider
+		) {
 
-		$stateProvider
-		.state('home', {
-			url: '/',
-			templateUrl: 'app/views/home.html',
-			controller: 'HomeController',
-			resolve: {
-				friends: ['FriendsService', function (FriendsService) {
-						return FriendsService.get();
-					}]
-			}
-		})
-		.state('about', {
-			url: '/about',
-			templateUrl: 'app/views/about.html',
-			controller: 'AboutController'
-		})
-		.state('contact', {
-			url: '/contact',
-			templateUrl: 'app/views/contact.html'
-		})
-	}])
+			$ocLazyLoadProvider.config({
+				asyncLoader: require
+			});
+			app.controller = $controllerProvider.register;
+			app.service = $provide.service;
+			app.factory = $provide.factory;
+			app.filter = $filterProvider.register;
+			app.directive = $compileProvider.directive;
+		}
+	]);
+	return app;
+});

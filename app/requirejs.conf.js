@@ -6,7 +6,7 @@ require
 		'angular-route': '../lib/AngularJS/angular-route.min',
 		'angular-ui-route': '../lib/AngularJS/angular-ui-router',
 		'oc-lazy-load': '../lib/ocLazyLoad/ocLazyLoad',
-		'app': 'app'
+		'app': 'app',
 	},
 	shim: {
 		'angular': {
@@ -28,6 +28,6 @@ require
 }
 );
 
-require(['angular', 'app'], function (angular) {
+require(['angular', 'routes'], function (angular) {
 	angular.bootstrap(document, ['app'])
 });
