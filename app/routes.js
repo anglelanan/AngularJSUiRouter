@@ -1,6 +1,5 @@
 define([
 	'app',
-	'angular-ui-route',
 	'controllers/HomeController',
 	'controllers/AboutController'
 ], function (app) {
