@@ -18,12 +18,12 @@ define([
 				controller: 'HomeController',
 				resolve: {
 					controller: function ($q) {
-						var def = $q.defer();
+						var deferred = $q.defer();
 						require(['controllers/HomeController'], function () {
-							def.resolve();
+							deferred.resolve();
 						});
 
-						return def.promise;
+						return deferred.promise;
 					}
 				}
 			})
@@ -33,12 +33,12 @@ define([
 				controller: 'AboutController',
 				resolve: {
 					controller: function ($q) {
-						var def = $q.defer();
+						var deferred = $q.defer();
 						require(['controllers/AboutController'], function () {
-							def.resolve();
+							deferred.resolve();
 						});
 
-						return def.promise;
+						return deferred.promise;
 					}
 				}
 			})
