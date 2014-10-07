@@ -17,7 +17,7 @@ define([
 				templateUrl: 'app/views/home.html',
 				controller: 'HomeController',
 				resolve: {
-					AboutController: function ($q) {
+					controller: function ($q) {
 						var def = $q.defer();
 						require(['controllers/HomeController'], function () {
 							def.resolve();
@@ -32,7 +32,7 @@ define([
 				templateUrl: 'app/views/about.html',
 				controller: 'AboutController',
 				resolve: {
-					AboutController: function ($q) {
+					controller: function ($q) {
 						var def = $q.defer();
 						require(['controllers/AboutController'], function () {
 							def.resolve();
