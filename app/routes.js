@@ -1,7 +1,5 @@
 define([
-	'app',
-	'controllers/HomeController',
-	'controllers/AboutController'
+	'app'
 ], function (app) {
 	app
 	.config([
@@ -17,12 +15,32 @@ define([
 			.state('home', {
 				url: '/',
 				templateUrl: 'app/views/home.html',
-				controller: 'HomeController'
+				controller: 'HomeController',
+				resolve: {
+					AboutController: function ($q) {
+						var def = $q.defer();
+						require(['controllers/HomeController'], function () {
+							def.resolve();
+						});
+
+						return def.promise;
+					}
+				}
 			})
 			.state('about', {
 				url: '/about',
 				templateUrl: 'app/views/about.html',
-				controller: 'AboutController'
+				controller: 'AboutController',
+				resolve: {
+					AboutController: function ($q) {
+						var def = $q.defer();
+						require(['controllers/AboutController'], function () {
+							def.resolve();
+						});
+
+						return def.promise;
+					}
+				}
 			})
 			.state('contact', {
 				url: '/contact',
